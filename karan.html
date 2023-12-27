@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown to Independence Day</title>
+</head>
+<body>
+
+<div id="countdown"></div>
+
+<script>
+function startCountdown() {
+  var countdownElement = document.getElementById('countdown');
+  var count = 10;
+
+  function displayCount() {
+    countdownElement.textContent = count;
+
+    if (count > 1) {
+      count--;
+      setTimeout(displayCount, 1000); // 1000 milliseconds = 1 second
+    } else {
+      // Display "Happy Independence Day" after the countdown
+      setTimeout(function() {
+        countdownElement.textContent = "Happy Independence Day!";
+      }, 1000);
+    }
+  }
+
+  // Start the countdown
+  displayCount();
+}
+
+// Call the function to start the countdown when the page loads
+document.addEventListener('DOMContentLoaded', startCountdown);
+</script>
+
+</body>
+</html>
